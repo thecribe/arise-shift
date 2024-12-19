@@ -120,6 +120,7 @@ const CsvOperator = () => {
     shiftArray.forEach((arr) => {
       if (arr.shift) {
         const dateAndTime = extractClockInTime(arr.date, arr.shift);
+
         if (new Date(shiftDate).getTime() !== new Date(dateAndTime).getTime()) {
           shiftDate = dateAndTime;
 

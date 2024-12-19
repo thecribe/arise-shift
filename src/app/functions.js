@@ -3,10 +3,11 @@ import customParseFormat from "dayjs/plugin/customParseFormat";
 
 // Extend dayjs with custom parsing
 dayjs.extend(customParseFormat);
-const format = "DD-MMM-YYYY h:mm A";
+const format = "DD-MMM-YY h:mm A";
 
 export const extractClockInTime = (date, shiftTime) => {
   // Split the string at the hyphen and take the first part
+
   let startTime = shiftTime.split(" - ")[0].trim();
 
   const mergeDateandTime =
@@ -20,6 +21,7 @@ export const extractClockInTime = (date, shiftTime) => {
 // export const getDateObject()
 export const setClockInTimeOne = (date, variation) => {
   let newDate = dayjs(date);
+
   // Generate a random number between -5 and 5
   let randomNum = Math.floor(Math.random() * (variation * 2 + 1)) - variation;
 
